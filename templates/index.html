@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Convert PE file to image</title>
+</head>
+
+<body>
+    <h1>Convert PE file to image</h1>
+    <div class="app">
+
+        <div class="form-section">
+
+            <form method="POST" enctype="multipart/form-data">
+                <input type="file" name="file">
+                <input type="submit" value="Convert">
+            </form>
+        </div>
+        <div class="images-section">
+            {% for image in images %}
+            <a href="{{ url_for('display_image', filename=image) }}" target="_blank">
+                <img src="{{ url_for('display_image', filename=image) }}" />
+            </a>
+            {% endfor %}
+            
+        </div>
+    </div>
+</body>
+
+</html>
