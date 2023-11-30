@@ -1,5 +1,0 @@
-input_dir là file chứa file PE uploads để chuyển đổi
-output_dir là file chứa file image đã chuyển đổi
-static: css
-templates: html
-sửa trong file app trong mục is_exe(), generate_and_save_image(), convert_bin_to_img()

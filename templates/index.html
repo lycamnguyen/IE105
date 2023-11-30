@@ -15,8 +15,22 @@
         <div class="form-section">
 
             <form method="POST" enctype="multipart/form-data">
-                <input type="file" name="file">
+                <input type="file" name="file" multiple="multiple">
+                <div class="color-img">
+                    <p>Choose colors for images: </p>
+                    <input type="radio" id="none" name="color" value="gray" checked>
+                    <label for="nonee" id="none">Gray</label><br>
+                    <input type="radio" id="green" name="color" value="green">
+                    <label for="green" id="green">Green</label><br>
+                    <input type="radio" id="red" name="color" value="red">
+                    <label for="red" id="red">Red</label><br>
+                    <input type="radio" id="yellow" name="color" value="yellow">
+                    <label for="yellow" id="yellow">Yellow</label>
+                </div>
                 <input type="submit" value="Convert">
+                <button onclick="downloadAll()">Download All Images</button>
+                <p>Run time: {{time_run}}</p>
+                <p>Total number of images: {{num_files}}</p>
             </form>
         </div>
         <div class="images-section">
@@ -25,9 +39,17 @@
                 <img src="{{ url_for('display_image', filename=image) }}" />
             </a>
             {% endfor %}
-            
+
         </div>
+
     </div>
+    <script>
+        function downloadAll() {
+            // You can modify the URL to match your Flask route
+            window.location.href = "{{ url_for('download_all_images') }}";
+        }
+    </script>
 </body>
 
 </html>
+
