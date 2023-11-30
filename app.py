@@ -63,7 +63,7 @@ def generate_image(input, output, fileName, color):
 
         cv2.imwrite(out_file_full, g)
     else:
-        print("not pe")
+        print("not file PE")
 
 
 def convert_binary_to_img(input, output):
